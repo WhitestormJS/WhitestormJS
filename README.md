@@ -3,40 +3,34 @@
 
 [![](https://img.shields.io/github/release/WhitestormJS/whitestorm.js.svg?style=flat-square)](https://github.com/WhitestormJS/whitestorm.js/releases)
 [![Three][three]][three-url]
-[![Build Status][travis]][travis-url]
 
-
-- [Documentation](http://whs.io/)
-- [Examples](https://whs-dev.surge.sh/examples/)
-- [Contributions/Trello](https://trello.com/b/ktjiOLrd/whitestormjs-contributions)
-- [Donate / OpenCollective](https://opencollective.com/whitestormjs)
-
-Community chat. [Join us!][discord-url]
-
-[![Discord][discord]][discord-url]
-
-### Table of content
-
-- [Basic setup](#basic-setup)
-   - [npm](#npm)
-- [Featured projects](#featured-projects)
+## Table of Contents
+- [Installation](#installation)
+- [Getting Started](#getting-started)
 - [Features](#features)
+- [Featured Projects](#featured-projects)
+- [Contributing](#contributing)
+- [External Modules](#external-modules)
 - [Donate](#donate)
-- [Why?](/.github/WHY.md)
+- [Backers](#backers)
 
-##### New releases
+
+## Installation
 
 > `whs` is currently at v2 major version. We had plans for v3 yet but development isn't active. So v2 will probably remain the main stable version until further notice.
 
 > We try to publish **minor update releases** for bug fixes, we will review PRs.
 
-#### NPM
+You can install the library using npm or by downloading the library directly.
 
+#### Install via npm
+
+For the latest stable version:
 ```bash
 # Install npm version
 $ npm install whs
 ```
-> For `whs@2.2.x` (Three.js r92) use @beta tag
+For the beta version use @beta tag
 
 ```bash
 # Install npm version
@@ -46,16 +40,17 @@ $ npm install whs@beta
 [![NPM Version][npm]][npm-url]
 
 
-### Basic setup
+## Getting Started
 
 Download the [minified library](https://raw.githubusercontent.com/WhitestormJS/whs.js/dev/build/whs.min.js) or link the one from [CDN](https://cdnjs.com/libraries/whitestorm.js)
 
+The code below shows you how to include these libraries using the script tag in your HTML files.
 ```html
 <script src="js/three.min.js"></script>
 <script src="js/whs.min.js"></script>
 ```
 
-The code below makes a `WHS.App` instance which handles all your [modules](modules) and components for better work with `WebGL`. This one creates a _scene_, _camera_ and _renderer_ - we add the following modules to the App.
+The code below makes a `WHS.App` instance which handles all your [modules](modules) and components for better work with `WebGL`. This one creates a _scene_, _camera_ and _renderer_ - we add the following modules to the App. The _scene_ holds all the object you would want to display such as models or animations. The _camera_ defines what is visible to the user/viewer. The _renderer_ draws the scene.  
 
 ```js
 const app = new WHS.App([
@@ -73,9 +68,22 @@ const app = new WHS.App([
 app.start(); // Run app.
 ```
 
+## Features
+
+- 💎 **User-Friendly** – Designed to be simple and intuitive to use.
+- 🚀 **Fast Prototyping** – Quickly test and refine your 3D designs with minimal setup
+- 🔌 **Component-Based Scene Graph** – Organize your scene using a architecture that makes managing 3D objects easy.
+- 💣 **High-Performance Physics Integration** – Simple integration of any **high performance physics** even with `Worker` (Multithreading).
+- ✨ **Automated Rendering** – Automatically handle rendering tasks. 
+- 🆕 **Modern JavaScript (ES2015+)** – Built with ES2015+ standards.
+- 🔧 **Extensible with Modules** – Customize and extend functionality using the modular extension system, giving you flexibility in how you build your scenes.
+- 📦 **Webpack and Three.js Friendly** – Integration with [Webpack](https://whs.io/Usage%20with%20webpack.html) and [Three.js](https://threejs.org/)
+- ❤️ **Interoperable with WhitestormJS and Three.js** – Work with both libraries side-by-side
+
+
 <a href="http://codepen.io/sasha240100/pen/JELBGX"><img src="http://blog.codepen.io/wp-content/uploads/2012/06/TryItOn-CodePen.png" height="50" /></a>
 
-### Featured projects
+## Featured Projects
 
 <a href="https://moxy.studio/">
   <img src="https://i.imgur.com/c9bmEDd.jpg?1" alt="https://moxy.studio/" width="30%" />
@@ -97,57 +105,22 @@ app.start(); // Run app.
   <img src="https://i.imgur.com/y0ZwWVi.png" alt="http://artifacts.zone/tree/" width="30%" />
 </a>
 
-<a href="http://abdaily.surge.sh/4/">
-  <img src="http://whs.io/images/showcase/daily4.png" alt="http://abdaily.surge.sh/4/" width="30%" />
-</a>
+### Contributing
 
-<!-- <a href="http://abdaily.surge.sh/3/">
-  <img src="http://whs.io/images/showcase/daily3.png" alt="http://abdaily.surge.sh/3/" width="30%" />
-</a> -->
+Here’s how you can contribute to Whs.js:
 
-<a href="http://abdaily.surge.sh/2/">
-  <img src="http://whs.io/images/showcase/daily2.png" alt="http://abdaily.surge.sh/2/" width="30%" />
-</a>
+1. Fork the repository and create your feature branch: `git checkout -b feature/my-feature`.
+2. Make your changes and commit them: `git commit -m 'Add my feature'`.
+3. Push to your branch: `git push origin feature/my-feature`.
+4. Open a pull request to the `develop` branch.
 
-<a href="http://abdaily.surge.sh/1/">
-  <img src="http://whs.io/images/showcase/daily1.png" alt="http://abdaily.surge.sh/1/" width="30%" />
-</a>
+Please make sure your code passes all tests by running:
 
-<a href="http://theroguepixel.com/">
-  <img src="http://whs.io/images/showcase/roguepixel.jpg" alt="http://theroguepixel.com/" width="30%" />
-</a>
+```bash
+npm test
+```
 
-<a href="http://supertiny.agency/">
-  <img src="http://whs.io/images/showcase/supertiny.jpg" alt="http://supertiny.agency/" width="30%" />
-</a>
-
-<a href="https://alexbuzin.me/">
-  <img src="http://whs.io/images/showcase/alexbuzinme.jpg" alt="https://alexbuzin.me/" width="30%" />
-</a>
-
-<a href="https://spatial.100shapes.com/">
-  <img src="http://whs.io/images/showcase/spatial.jpg" alt="https://spatial.100shapes.com/" width="30%" />
-</a>
-
-<a href="http://plateaux.space/">
-  <img src="http://whs.io/images/showcase/plateux.jpg" alt="http://plateaux.space/" width="30%" />
-</a>
-
-
-### Features
-
-* 💎 **Simple in usage**
-* :rocket: Speeds up 3D scene prototyping
-* 🔌  **Component based scene graph**
-* 💣 Simple integration of any **high performance physics** even with `Worker` (Multithreading)
-* :dizzy: Automatization of rendering
-* 🆕 **ES2015+ based**
-* :large_blue_diamond: Extension system (modules)
-* :package: [Webpack](https://whs.io/Usage%20with%20webpack.html) friendly
-* ✔️ **Integrated [Three.js](https://threejs.org/) rendering engine**
-* :revolving_hearts: Work with whs.js and Three.js at the same time
-
-### External Modules
+## External Modules
 
 |Name|Status|Description|
 |:--:|:----:|:----------|
@@ -156,12 +129,12 @@ app.start(); // Run app.
 [physics-ammonext]: https://github.com/WhitestormJS/physics-module-ammonext
 [physics-ammonext-npm]: https://img.shields.io/npm/v/physics-module-ammonext.svg?style=flat-square
 
-### Donate
+## Donate
 
 [![OpenCollective Backers][backer-badge]][backer-url]
 [![OpenCollective Sponsors][sponsor-badge]][sponsor-url]
 
-#### Backers
+### Backers
 
 Support us with a monthly donation and help us continue framework development🎉 and adding new features💡🎁.
 
